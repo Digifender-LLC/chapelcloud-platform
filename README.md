@@ -9,7 +9,7 @@ This repo is a scaffold. Implementation choices will be recorded as ADRs in [`co
 - **Orgs & members** — churches/nonprofits and staff roles
 - **Auth** — sign-in for portal and device pairing
 - **Billing hooks** — subscriptions / entitlements (provider TBD)
-- **Device registry** — NDI boxes, e-paper displays, status, config
+- **Device registry** — campus display appliances, e-paper displays, status, config
 - **APIs** used by the future customer portal and device agents
 
 ## Non-goals (for now)

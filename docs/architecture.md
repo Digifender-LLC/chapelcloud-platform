@@ -6,7 +6,7 @@ Early direction — not implemented yet.
 [ home-site ]          public marketing
 [ portal ]             customer UI (future repo)
         \
-         →  [ platform API ]  ← device agents (NDI / e-paper)
+         →  [ platform API ]  ← device agents (campus displays / e-paper)
                     |
               persistence + secrets (Cloudflare / TBD)
 ```

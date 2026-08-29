@@ -7,7 +7,7 @@ ChapelCloud product surfaces that will eventually talk to this platform:
 | Donations | Giving flows |
 | Hosting | Managed church/nonprofit sites |
 | Bookkeeping | Fund accounting / ledgers |
-| NDI production | Hardware appliances |
+| Campus display management | Hardware appliances (live video, cloud media, CEC, casting) |
 | E-paper displays | Room / wayfinding hardware |
 
 Shared concerns (orgs, auth, devices, entitlements) stay here; domain logic can start as modules and split later if needed.
