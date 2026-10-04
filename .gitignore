@@ -8,3 +8,4 @@ build/
 .wrangler/
 .svelte-kit/
 coverage/
+.dev.vars
