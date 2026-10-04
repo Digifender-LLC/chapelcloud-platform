@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "platform",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-06",
+  "observability": { "enabled": true },
+  "vars": {
+    // Browser origin of the customer portal UI. Only this origin may make
+    // credentialed cross-origin calls or state-changing requests.
+    "PORTAL_ORIGIN": "https://portal.chapel.cloud"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "platform",
+      // Placeholder until the D1 database is created in the ChapelCloud account
+      // (`wrangler d1 create platform`); paste the real id here.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

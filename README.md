@@ -20,9 +20,27 @@ This repo is a scaffold. Implementation choices will be recorded as ADRs in [`co
 
 ## Status
 
-Scaffold only. No runtime service yet.
+The first service is the customer portal API: sign-in, sessions, customer
+accounts, organizations and invitations. See
+[`docs/customer-portal-auth.md`](docs/customer-portal-auth.md).
+
+## Development
+
+Cloudflare Worker (Hono) with a D1 database.
+
+```sh
+npm install
+npm run db:migrate:local   # create local D1 tables
+npm run dev                # http://localhost:8787
+npm test                   # runs in the Workers runtime via Miniflare
+npm run typecheck
+```
+
+Before the first deploy, create the database with `npx wrangler d1 create platform`
+and put its id in `wrangler.jsonc`. Run `npm run cf-typegen` after changing bindings.
 
 ## Docs
 
 - [`docs/architecture.md`](docs/architecture.md) — target shape
 - [`docs/domains.md`](docs/domains.md) — product domains this platform serves
+- [`docs/customer-portal-auth.md`](docs/customer-portal-auth.md) — portal sign-in design
