@@ -1,4 +1,4 @@
-# ChapelCloud — platform
+# ChapelCloud — platform (`chapelcloud-platform`)
 
 Shared backend platform for ChapelCloud: organizations (churches / nonprofits), auth, billing hooks, and device registry for connected hardware.
 
@@ -36,8 +36,16 @@ npm test                   # runs in the Workers runtime via Miniflare
 npm run typecheck
 ```
 
-Before the first deploy, create the database with `npx wrangler d1 create platform`
-and put its id in `wrangler.jsonc`. Run `npm run cf-typegen` after changing bindings.
+Run `npm run cf-typegen` after changing bindings.
+
+## Deployment
+
+Merging to `main` deploys. Cloudflare Workers Builds (Worker `chapelcloud-platform`)
+runs `npm run typecheck && npm test`, then applies D1 migrations to the
+`chapelcloud-platform` database and runs `wrangler deploy`. A failing typecheck or
+test means nothing is deployed. The API is served at `https://api.chapel.cloud`
+(`workers.dev` is disabled). Never deploy or run `--remote` commands by hand;
+see [`AGENTS.md`](AGENTS.md).
 
 ## Docs
 
