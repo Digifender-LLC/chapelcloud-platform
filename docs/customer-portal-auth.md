@@ -55,11 +55,12 @@ All under `/v1`, JSON in and out, errors as `{ "error": "..." }`.
 ## Onboarding a new customer
 
 There is no outbound email yet, so invitations return their link for staff to
-send by hand. For a brand-new organization:
+send by hand. For a brand-new organization (an owner-only step that writes
+to the production database; coding agents must not run it):
 
 ```sh
 node scripts/invite-owner.mjs "Grace Chapel" pastor@gracechapel.org > invite.sql
-npx wrangler d1 execute platform --remote --file invite.sql
+npx wrangler d1 execute chapelcloud-platform --remote --file invite.sql   # owner only
 # send the printed link to the pastor
 ```
 

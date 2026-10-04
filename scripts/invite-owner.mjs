@@ -3,7 +3,10 @@
 // customer. Prints the SQL to run and the link to send them.
 //
 //   node scripts/invite-owner.mjs "Grace Chapel" pastor@gracechapel.org > invite.sql
-//   npx wrangler d1 execute platform --remote --file invite.sql
+//   npx wrangler d1 execute chapelcloud-platform --remote --file invite.sql
+//
+// Owner-only: the second command writes to the production database. Coding
+// agents must not run it (see AGENTS.md).
 //
 // The link is printed to stderr so it never lands in the SQL file.
 import { createHash, randomBytes, randomUUID } from "node:crypto";

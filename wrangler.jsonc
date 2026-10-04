@@ -1,9 +1,13 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "platform",
+  // Deployed by Cloudflare Workers Builds on every merge to main (see AGENTS.md).
+  // The name must match the Worker connected to Workers Builds.
+  "name": "chapelcloud-platform",
   "main": "src/index.ts",
   "compatibility_date": "2026-08-06",
   "observability": { "enabled": true },
+  "workers_dev": false,
+  "routes": [{ "pattern": "api.chapel.cloud", "custom_domain": true }],
   "vars": {
     // Browser origin of the customer portal UI. Only this origin may make
     // credentialed cross-origin calls or state-changing requests.
@@ -12,10 +16,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "platform",
-      // Placeholder until the D1 database is created in the ChapelCloud account
-      // (`wrangler d1 create platform`); paste the real id here.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_name": "chapelcloud-platform",
+      "database_id": "ac299980-da6d-40bc-ba37-e7820ddaef47",
       "migrations_dir": "migrations"
     }
   ]
